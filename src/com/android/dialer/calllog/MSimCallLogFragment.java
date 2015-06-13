@@ -148,12 +148,6 @@ public class MSimCallLogFragment extends CallLogFragment
     }
 
     @Override
-    public void onActivityCreated(Bundle savedState) {
-        setHasOptionsMenu(true);
-        super.onActivityCreated(savedState);
-    }
-
-    @Override
     public void fetchCalls() {
         fetchCalls(mFilterFrom, mFilterTo, mCallSlotFilter);
     }
@@ -226,11 +220,9 @@ public class MSimCallLogFragment extends CallLogFragment
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
-        if (getUserVisibleHint()) {
-            inflater.inflate(R.menu.call_log_fragment_options, menu);
-            MenuItem resetItem = menu.findItem(R.id.reset_date_filter);
-            resetItem.setVisible(mFilterFrom != -1);
-        }
+        inflater.inflate(R.menu.call_log_fragment_options, menu);
+        MenuItem resetItem = menu.findItem(R.id.reset_date_filter);
+        resetItem.setVisible(mFilterFrom != -1);
     }
 
     @Override
