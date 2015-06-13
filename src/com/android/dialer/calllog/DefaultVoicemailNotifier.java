@@ -357,7 +357,6 @@ public class DefaultVoicemailNotifier implements VoicemailNotifier {
      * called from the main thread.
      */
     public static PhoneNumberDisplayHelper createPhoneNumberHelper(Context context) {
-        return new PhoneNumberDisplayHelper(context, context.getResources(),
-                new PhoneNumberUtilsWrapper(context));
+        return new PhoneNumberDisplayHelper(context, context.getResources());
     }
 }
